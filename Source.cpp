@@ -26,6 +26,9 @@ const int max_nodes = 128;
 // of the file contains a square matrix of this size.
 int number_of_nodes;
 
+// In the Cornell code this was a fixed size 128 x 128 array. Here
+// it is a vector with the 2D illusion layered on top. See other comments
+// describing this data structure.
 vector<int> graph;
 
 // This vector memorializes the minimum cost to reach each node
@@ -36,6 +39,10 @@ vector<int> dist;
 
 // This vector is the "secret sauce" that provides a means of
 // reconstructing the shortest paths computed within dijkstra().
+// This was overlooked in the Cornell code and not mentioned in
+// such resources as the videos on this subject that I consulted
+// on youtube.com, the source of all learning.
+//
 // Each time a node is updated with a new lowest cost / shortest
 // distance, the preceeding node is stored as well. This records
 // how one got to the node being updated with a new best value.
@@ -97,8 +104,7 @@ void GraphSet(int u, int v, int c)
 // and not during executation of Dijkstra's algorithm.
 //
 // Parameters:
-//	int u	- think of this as an row number.
-//	int v	- think of this as a column number.
+//	int i	- the ordinal position to overwrite
 //	int c	- the new cost to be associated with the vertices
 // Returns:
 //	none
@@ -241,6 +247,7 @@ int main(int argc, char * argv[])
 				}
 
 				dijkstra(src);
+
 				int w = 8;
 				cout << right << setw(3 * w) << "Cum." << right << setw(w) << "Prev" << endl;
 				cout << right << setw(w) << "From:";
@@ -258,5 +265,6 @@ int main(int argc, char * argv[])
 			}
 		}
 	}
+	// Windows dependency - remove this.
 	system("pause");
 }

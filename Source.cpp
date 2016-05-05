@@ -178,11 +178,11 @@ void dijkstra(int s)
 				{
 					// Use of set in the Cornell code necessesitates this
 					// code for updating the set of nodes under consideration.
-					// The value in set cannot be updated directly as distance
-					// is used in determining it's place within the set. As
-					// distance is what it being changed, the node must be removed
-					// if present. Then the value of dist is changed and the node
-					// readded - likely landing in a different spot in the set.
+					// The values in set cannot be updated directly as distance
+					// is used in determining a node's place within the set. As
+					// distance is what is being changed, the node must be removed
+					// if already present. Then the value of dist is changed and the node
+					// re-added - possibly landing in a different spot in the set.
 					if (q.count(v))
 					{
 						q.erase(v);

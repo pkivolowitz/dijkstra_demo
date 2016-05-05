@@ -227,7 +227,7 @@ int main(int argc, char * argv[])
 					if (in.eof())
 					{
 						cerr << "The graph file is not well formed. An eof was reached too early." << endl;
-						cerr << "Executation will continue with bogus data purely for entertainment value." << endl;
+						cerr << "Execution will continue with bogus data purely for entertainment value." << endl;
 						break;
 					}
 					in >> v;

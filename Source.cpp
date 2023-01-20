@@ -176,7 +176,7 @@ void dijkstra(int s)
 				int newDist = dist[u] + GraphGet(u, v);
 				if (newDist < dist[v])
 				{
-					// Use of set in the Cornell code necessesitates this
+					// Use of set in the Cornell code necessitates this
 					// code for updating the set of nodes under consideration.
 					// The values in set cannot be updated directly as distance
 					// is used in determining a node's place within the set. As
@@ -260,11 +260,9 @@ int main(int argc, char * argv[])
 					cout << right << setw(w) << i;
 					cout << right << setw(w) << dist[i];
 					cout << right << setw(w) << previous_node[i];
-					cout << ((previous_node[i] == -1) ? " >>-->" : "") << endl;
+					cout << ((previous_node[i] == -1) ? " <--<<" : "") << endl;
 				}
 			}
 		}
 	}
-	// Windows dependency - remove this.
-	system("pause");
 }

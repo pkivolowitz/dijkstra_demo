@@ -237,13 +237,13 @@ int main(int argc, char * argv[])
 				cout << "Connectivity table read." << endl;
 
 				int src;
-				cout << "Enter source node number [0 to " << number_of_nodes - 1 << "]: ";
+				cout << "Enter initial node number [0 to " << number_of_nodes - 1 << "]: ";
 				cin >> src;
 
 				if (src < 0 || src >= number_of_nodes)
 				{
-					cerr << "Using 0 as source node." << endl;
-					src = 0;
+					cerr << "Node number is out of range." << endl;
+					return 1;
 				}
 
 				dijkstra(src);
